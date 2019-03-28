@@ -1,3 +1,7 @@
+"""
+List all authenticated nvidia docker tags for reference
+"""
+
 from urllib import request as req
 import json
 
