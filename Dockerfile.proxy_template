@@ -51,5 +51,5 @@ RUN echo proxy=${PROXY_FULL} >> /root/.curlrc
 
 RUN echo Done for your PROXY
 
-### NORMAL Dockerfile description follows bellow
+### NORMAL Dockerfile description follows below
 
