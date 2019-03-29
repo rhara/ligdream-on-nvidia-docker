@@ -31,8 +31,4 @@ RUN echo "c.NotebookApp.password = 'sha1:29a4e89b9f3d:2bc031d09642273adf9128ce40
 
 WORKDIR /root
 RUN git clone https://github.com/compsciencelab/ligdream.git
-WORKDIR /root/ligdream
-RUN bash getDataset.sh
-RUN bash getWeights.sh
-WORKDIR /root
 
