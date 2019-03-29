@@ -1,4 +1,4 @@
-# nvidia-docker-test
+# ligDream on nvidia-docker container
 
 This is to run ligDream on nvidia-docker.
 
