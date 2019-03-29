@@ -24,12 +24,16 @@ This is to run ligDream on nvidia-docker.
 
 Be warned that downloading data will take some while (zinc15_druglike_clean_canonical_max60.zip = 1.6GB, ligdream-20190128T143457Z-001.zip = 182MB).
 
+Data will be copied into container. getData.sh does continued downloading after any interruption (wget -c).
+
 ```
 bash getData.sh
 nvidia-docker build -t h_nvidia/cuda9.1:0.1 .
 ```
 
 ### Typical run the container
+
+Always convenient if container has mountpoint to host directory.
 
 ```
 nvidia-docker run -ti -v $PWD:/supp -p 8888:8888 h_nvidia/cuda9.1:0.1
