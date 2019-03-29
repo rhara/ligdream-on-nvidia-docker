@@ -45,6 +45,7 @@ RUN echo proxy_passwd = ${PROXY_PASSWORD} >> /root/.wgetrc
 RUN echo http_proxy = ${PROXY_FULL} >> /root/.wgetrc
 RUN echo https_proxy = ${PROXY_FULL} >> /root/.wgetrc
 RUN echo ftp_proxy = ${PROXY_FULL} >> /root/.wgetrc
+RUN echo progress = bar:force:noscroll >> /root/.wgetrc
 
 ###CURL
 RUN echo proxy=${PROXY_FULL} >> /root/.curlrc
