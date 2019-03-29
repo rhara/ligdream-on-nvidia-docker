@@ -34,3 +34,4 @@ RUN git clone https://github.com/compsciencelab/ligdream.git
 
 COPY traindataset /root/ligdream/traindataset
 COPY modelweights /root/ligdream/modelweights
+COPY generate.ipynb /root/ligdream/generate.ipynb
