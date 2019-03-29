@@ -6,3 +6,7 @@ build:
 
 run:
 	nvidia-docker run -ti -v $$PWD:/supp -p 8888:8888 $(IMAGE):$(TAG)
+
+clean:
+	docker rm $$(docker ps -aq) || exit 0
+	docker rmi $$(docker images | grep none | awk '{print $$3}')
