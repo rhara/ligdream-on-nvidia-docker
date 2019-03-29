@@ -22,9 +22,10 @@ RUN echo Aquire::https::proxy '"'${PROXY_FULL}'";' >> /etc/apt/apt.conf
 
 RUN apt-get update
 RUN apt-get upgrade -y
+RUN apt-get install wget -y
+RUN apt-get install git -y
 
 ###GIT
-RUN apt-get install git -y
 RUN git config --global http.proxy ${HTTP_PROXY}
 RUN git config --global https.proxy ${HTTPS_PROXY}
 
