@@ -22,7 +22,7 @@ This is to run ligDream on nvidia-docker.
 
 ### Typical build procedure
 
-Be warned that downloading data will take some while.
+Be warned that downloading data will take some while (zinc15_druglike_clean_canonical_max60.zip = 1.6GB, ligdream-20190128T143457Z-001.zip = 182MB).
 
 ```
 bash getData.sh
