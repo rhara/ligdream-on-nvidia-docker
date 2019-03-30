@@ -36,5 +36,5 @@ nvidia-docker build -t ligdream_nvidia/cuda8.0:0.1 .
 Always convenient if container has mountpoint to host directory.
 
 ```
-nvidia-docker run -ti -v $PWD:/supp -p 8888:8888 h_nvidia/cuda9.1:0.1
+nvidia-docker run -ti -v $PWD:/supp -p 8888:8888 h_nvidia/cuda8.0:0.1
 ```
