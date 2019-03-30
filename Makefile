@@ -1,11 +1,11 @@
-IMAGE = h_nvidia/cuda9.1
+IMAGE = libdream_nvidia/cuda
 TAG = 0.1
 
-build:
-	nvidia-docker build -t $(IMAGE):$(TAG) .
+build_py36_cuda80:
+	nvidia-docker build -t $(IMAGE)80:$(TAG) .
 
-run:
-	nvidia-docker run -ti -v $$PWD:/supp -p 8888:8888 $(IMAGE):$(TAG)
+run_py36_cuda80:
+	nvidia-docker run -ti -v $$PWD:/supp -p 8888:8888 $(IMAGE)80:$(TAG)
 
 clean:
 	@running="$$(docker ps -aq)" ; \
