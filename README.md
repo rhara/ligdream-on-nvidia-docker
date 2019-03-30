@@ -38,3 +38,31 @@ Always convenient if container has mountpoint to host directory.
 ```
 nvidia-docker run -ti -v $PWD:/supp -p 8888:8888 h_nvidia/cuda8.0:0.1
 ```
+
+### Testing
+
+```
+$ cd ligdream
+$ head -10000 traindataset/zinc15_druglike_clean_canonical_max60.smi > test10000.smi
+$ python prepare_data.py -i test10000.smi -o test10000.npy
+100%|##########################################################################################################| 10000/10000 [00:01<00:00, 5351.14it/s]
+$ python train.py -i test10000.npy -o models
+SmallMol module is in beta version
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "train.py", line 44, in <module>
+    decoder.cuda()
+  File "/root/miniconda3/envs/py36/lib/python3.6/site-packages/torch/nn/modules/module.py", line 216, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/root/miniconda3/envs/py36/lib/python3.6/site-packages/torch/nn/modules/module.py", line 146, in _apply
+    module._apply(fn)
+  File "/root/miniconda3/envs/py36/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 123, in _apply
+    self.flatten_parameters()
+  File "/root/miniconda3/envs/py36/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 111, in flatten_parameters
+    params = rnn.get_parameters(fn, handle, fn.weight_buf)
+  File "/root/miniconda3/envs/py36/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 165, in get_parameters
+    assert filter_dim_a.prod() == filter_dim_a[0]
+AssertionError
+
+
+```
