@@ -28,7 +28,7 @@ Data will be copied into container. getData.sh does continued downloading after 
 
 ```
 bash getData.sh
-nvidia-docker build -t h_nvidia/cuda9.1:0.1 .
+nvidia-docker build -t ligdream_nvidia/cuda8.0:0.1 .
 ```
 
 ### Typical run the container
