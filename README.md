@@ -63,6 +63,4 @@ Traceback (most recent call last):
   File "/root/miniconda3/envs/py36/lib/python3.6/site-packages/torch/backends/cudnn/rnn.py", line 165, in get_parameters
     assert filter_dim_a.prod() == filter_dim_a[0]
 AssertionError
-
-
 ```
