@@ -4,11 +4,11 @@ This is to run ligDream on nvidia-docker.
 
 ### Requisite
 
-- CUDA9.1 compatible nvidia driver
+- CUDA9.1 (also 8.0) compatible nvidia driver
 
 ### Major installation items
 
-- Virtual environment of Python3.5
+- Virtual environment of Python3.6
 - rdkit 2017.09.2.0 (conda install -y -c rdkit rdkit=2017.09.2.0)
 - pytorch 0.3.1 of cuda91 build (conda install -y -c pytorch pytorch=0.3.1 cuda91)
 - keras 2.2.2 (conda install -y -c conda-forge keras=2.2.2)
@@ -16,7 +16,7 @@ This is to run ligDream on nvidia-docker.
 
 ### Some notes
 
-- Login directly brings you in python3.5 environment
+- Login directly brings you in python3.6 environment
 - Jupyter notebook is modified to allow root and from ip 0.0.0.0
 - ligdream is cloned and add PYTHONPATH for ready use
 
