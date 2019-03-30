@@ -4,7 +4,7 @@ This is to run ligDream on nvidia-docker.
 
 ### Requisite
 
-- CUDA9.1 (also 8.0) compatible nvidia driver
+- CUDA8.0 (also 9.1) compatible nvidia driver
 
 ### Major installation items
 
