@@ -26,7 +26,7 @@ clean:
 	@running="$$(docker ps -aq)" ; \
 	if [ -n "$$running" ] ; then \
 	    echo Removing instances $$running ; \
-		docker rm $$running ; \
+		docker rm -f $$running ; \
 	fi ; \
 	nones="$$(docker images | grep none | awk '{print $$3}')" ; \
 	if [ -n "$$nones" ] ; then \
