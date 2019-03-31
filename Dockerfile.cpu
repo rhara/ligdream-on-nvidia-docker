@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install lsof wget curl vim git unzip -y
+RUN apt-get install lsof wget curl vim git unzip bzip2 -y
 RUN apt-get install libxrender1 -y
 
 RUN wget -q -c -O /tmp/Miniconda3-latest-Linux-x86_64.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -20,7 +20,7 @@ ENV PYTHONPATH /root:$PYTHONPATH
 
 RUN conda update -y --all
 RUN conda install -y -c rdkit rdkit=2017.09.2.0
-RUN conda install -y -c pytorch pytorch=0.3.1
+RUN conda install -y -c pytorch pytorch-cpu=0.3.1
 RUN conda install -y -c conda-forge keras=2.2.2
 RUN conda install -y -c acellera -c psi4 psi4=1.2.1 pcmsolver=1.2.1 htmd=1.13.9
 

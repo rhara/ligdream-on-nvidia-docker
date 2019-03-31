@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 # Ref. https://github.com/compsciencelab/ligdream
 
@@ -12,15 +12,15 @@ RUN bash /tmp/Miniconda3-latest-Linux-x86_64.sh -b
 ENV PATH /root/miniconda3/bin:$PATH
 ENV CONDA_EXE /root/miniconda3/bin/conda
 RUN conda update -y -n base -c defaults conda
-RUN conda create -y -n py36 python=3.6
-ENV PATH /root/miniconda3/envs/py36/bin:$PATH
-ENV CONDA_DEFAULT_ENV py36
-ENV CONDA_PREFIX /root/miniconda3/envs/py36
+RUN conda create -y -n py35 python=3.5
+ENV PATH /root/miniconda3/envs/py35/bin:$PATH
+ENV CONDA_DEFAULT_ENV py35
+ENV CONDA_PREFIX /root/miniconda3/envs/py35
 ENV PYTHONPATH /root:$PYTHONPATH
 
 RUN conda update -y --all
 RUN conda install -y -c rdkit rdkit=2017.09.2.0
-RUN conda install -y -c pytorch pytorch=0.3.1
+RUN conda install -y -c pytorch pytorch=0.3.1 cuda90
 RUN conda install -y -c conda-forge keras=2.2.2
 RUN conda install -y -c acellera -c psi4 psi4=1.2.1 pcmsolver=1.2.1 htmd=1.13.9
 
