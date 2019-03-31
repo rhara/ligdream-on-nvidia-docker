@@ -1,4 +1,4 @@
-build_py36:
+build_py36_cpu:
 	docker build -t ligdream_cpu:0.1 -f Dockerfile.cpu .
 
 build_py36_cuda80:
@@ -10,7 +10,7 @@ build_py35_cuda90:
 build_py36_cuda100:
 	nvidia-docker build -t ligdream_nvidia/cuda100:0.1 -f Dockerfile.cuda100 .
 
-run_py36:
+run_py36_cpu:
 	docker run -t -i -v $$PWD:/supp -p 8888:8888 ligdream_cpu:0.1 bash
 
 run_py36_cuda80:
