@@ -7,6 +7,9 @@ build_py36_cuda80:
 build_py35_cuda90:
 	nvidia-docker build -t ligdream_nvidia/cuda90:0.1 -f Dockerfile.cuda90 .
 
+build_py36_cuda91:
+	nvidia-docker build -t ligdream_nvidia/cuda91:0.1 -f Dockerfile.cuda91 .
+
 build_py36_cuda100:
 	nvidia-docker build -t ligdream_nvidia/cuda100:0.1 -f Dockerfile.cuda100 .
 
@@ -18,6 +21,9 @@ run_py36_cuda80:
 
 run_py35_cuda90:
 	nvidia-docker run -t -i -v $$PWD:/supp -p 8888:8888 ligdream_nvidia/cuda90:0.1 bash
+
+run_py35_cuda91:
+	nvidia-docker run -t -i -v $$PWD:/supp -p 8888:8888 ligdream_nvidia/cuda91:0.1 bash
 
 run_py36_cuda100:
 	nvidia-docker run -t -i -v $$PWD:/supp -p 8888:8888 ligdream_nvidia/cuda100:0.1 bash
